@@ -1,7 +1,7 @@
 <template>
   <div class="vr">
     <div class="shade" @click="onCloseVR"></div>
-    <div class="swiper-container vr-swiper">
+    <div class="swiper-container vr-swiper swiper-no-swiping">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item,index) in vrData" :key="index">
           <div class="left">
