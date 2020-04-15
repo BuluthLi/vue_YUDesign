@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src="./dll/publicjs.dll.js"></script>
-    <title>yudizign</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./dll/publicjs.dll.js"></script>
+
+  <title>Yudezign</title>
+  <script>
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      // alert(navigator.userAgent + '现在移动端打开的')
+      window.location.replace('http://m.yudezign.com');
+    } else {
+      // alert(navigator.userAgent + '现在是pc端打开的')
+    }
+
+    // var wx = (function () { return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 })();
+    // if (wx) {
+    //   alert(navigator.userAgent + "是微信");
+    // } else {
+    //   alert(navigator.userAgent + "不是微信");
+    // }
+    // alert(navigator.userAgent.toLowerCase());
+
+    // 对应谷歌地图的回调，避免报错，无实际操作意义
+    function initMap() { }
+
+    let target = document.documentElement || document.body;
+    target.style.fontSize = target.clientWidth / 1920 * 100 + 'px';
+
+
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ozzDLpblYqEVGUhL5BUmNgXYOMaprJU&callback=initMap"
+    async defer></script>
+</body>
+
 </html>

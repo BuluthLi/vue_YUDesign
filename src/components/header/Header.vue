@@ -2,7 +2,7 @@
   <div class="header" id="header">
     <div class="nav-box">
       <div class="logo-box">
-        <img src="./logo.png" alt class="logo" />
+        <img src="./LOGO.jpg" alt class="logo" />
       </div>
       <div
         class="nav-item"
@@ -30,7 +30,7 @@ export default {
         },
         {
           id: 1,
-          name: "PRODUCT LIST",
+          name: "COLLECTIONS",
           path: "/product",
           hrefName: "product"
         },
@@ -52,6 +52,11 @@ export default {
   watch: {
     $route(to, from) {
       window.scrollTo(0, 0);
+      if (to && to.path) {
+        setTimeout(() => {
+          this.initScroll();
+        }, 300);
+      }
       if (to.path == "/home") {
         this.current = 0;
         return;
@@ -72,11 +77,15 @@ export default {
   },
   mounted: function() {
     let currentPath = window.location.href;
+    window.addEventListener("scroll", this.initScroll);
     for (let i = 0; i < this.navList.length; i++) {
       if (currentPath.indexOf(this.navList[i].hrefName) != -1) {
         this.current = this.navList[i].id;
       }
     }
+    setTimeout(() => {
+      this.initScroll();
+    }, 300);
   },
   methods: {
     onChagePage: function(path, id) {
@@ -89,7 +98,21 @@ export default {
         query: {}
       });
     },
-  
+    initScroll() {
+      let documentObj = document.documentElement || document.body;
+      let documentHeight = window.innerHeight || documentObj.clientHeight;
+      let goalData = document.getElementsByClassName("scroll-base");
+      for (let i = 0; i < goalData.length; i++) {
+        let bouding = goalData[i].getBoundingClientRect();
+        if (bouding.top <= documentHeight - 20) {
+          goalData[i].classList.remove("scroll-hidden");
+          goalData[i].classList.add("scroll-visible");
+        } else {
+          goalData[i].classList.remove("scroll-visible");
+          goalData[i].classList.add("scroll-hidden");
+        }
+      }
+    },
   }
 };
 </script>
@@ -105,14 +128,13 @@ export default {
     align-items: center;
     line-height: 150px;
     .logo-box {
-      width: 200px;
+      width: 150px;
       height: 150px;
       text-align: center;
-      background: #bd9f6f;
       margin-right: 90px;
       .logo {
-        width: 154px;
-        height: 56px;
+        width: 150px;
+        height: 150px;
         vertical-align: middle;
       }
     }

@@ -13,7 +13,8 @@
             <span style="color:#FFC80B;">456456</span> TIMES:
           </div>
           <div class="swiper">
-            <marquee style="margin:0 20px;"
+            <marquee
+              style="margin:0 20px;"
               direction="left"
               scrolldelay="10"
               scrollamount="10"
@@ -61,7 +62,8 @@
               placeholder="PROVINCE"
               class="bm-input input-province"
             />
-            <img src="./btn-liangchi-submit.png" class="submit-btn" alt @click="onApply" />
+            <img src="./btn-liangchi-submit.jpg" class="submit-btn" alt @click="onApply" />
+            <!-- <img src="./btn-liangchi-submit.png" class="submit-btn" alt /> -->
           </div>
         </div>
       </div>
@@ -88,20 +90,43 @@ export default {
     onCloseDetail: function() {
       this.showDetail = false;
     },
+    // 此处使用在axios人为扩展的jsonp方式，进行数据请求
     onApply: function() {
-      // let flag = /^1[3456789]\d{9}$/.test(this.tel);
-      // console.log(flag,this.name.trim());
-      if (!this.tel.trim() || !this.name.trim()) {
+      let phone = this.tel.trim();
+      let name = this.name.trim();
+      let province = this.province.trim();
+      if (!phone || !name) {
         this.$Notice.error({
           title: "Notice Error",
           desc: "Please enter the correct information"
         });
         return;
       }
-      this.$Notice.success({
-        title: "Notice Success",
-        desc: "Submit Successfully!"
-      });
+      let params = {
+        name: name,
+        phone: phone,
+        province: province
+      };
+
+      this.$http
+        .jsonp("http://admin.yudezign.com/appoint", params)
+        .then(res => {
+          let data = res;
+          if (typeof data == "string") {
+            data = JSON.parse(data);
+          }
+          if (data.status == 1) {
+            this.$Notice.success({
+              title: data.msg || "Notice Success",
+              desc: "Submit Successfully!"
+            });
+          } else {
+            this.$Notice.success({
+              title: "Notice Error",
+              desc: "Please enter the correct information"
+            });
+          }
+        });
     }
   }
 };
@@ -112,7 +137,7 @@ export default {
   z-index: 101;
   .init-block {
     position: fixed;
-    bottom: 120px;
+    bottom: 60px;
     right: 20px;
     img {
       display: block;
@@ -197,6 +222,7 @@ export default {
           padding: 0 6px;
           background: rgba(32, 32, 28, 1);
           color: white;
+          cursor: pointer;
         }
       }
     }

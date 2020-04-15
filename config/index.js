@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/api": {
-        target: 'https://mnls-znxc.yfway.com/',
+        target: 'http://admin.yudezign.com',
         changeOrigin: true,
         //如果采用"/api",pathRewirte是必要的,使用"/"，就不需要（但是一般推荐"/api"模式）
         pathRewrite: { "^/api": "" }
@@ -27,7 +27,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

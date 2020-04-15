@@ -54,6 +54,7 @@ export default {
       // console.log(to, from);
       // to , from 分别表示从哪跳转到哪，都是一个对象
       // to.path  ( 表示的是要跳转到的路由的地址 eg: /home );
+      if (to.hash != "") return;
       this.listHeight = [];
       window.sessionStorage.setItem(
         "listHeight",
@@ -65,6 +66,10 @@ export default {
     }
   },
   mounted: function() {
+    // 获取浏览器视口高度
+    // let target = document.documentElement || document.body;
+    // let targetHeight = window.innerHeight || target.clientHegiht;
+    // console.log(targetHeight);
     window.addEventListener("scroll", this.initScroll);
     // 请给dom一点时间
     var language = window.sessionStorage.getItem("language")
@@ -112,13 +117,14 @@ export default {
   position: fixed;
   top: 300px;
   right: 0;
+  z-index: 300;
   li {
     list-style: none;
     font-size: 14px;
     font-family: Roboto;
     font-weight: 100;
     .normal {
-      color: rgba(220, 220, 220, 1);
+      color: #999;
       padding: 14px;
       width: 150px;
       text-align: center;
@@ -126,7 +132,7 @@ export default {
       border-bottom: 1px solid rgba(229, 229, 229, 1);
     }
     .active {
-      color: #666666;
+      color: #333;
       width: 180px;
       text-align: center;
       border-bottom: 1px solid rgba(102, 102, 102, 1);

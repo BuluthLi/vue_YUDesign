@@ -1,65 +1,121 @@
 <template>
   <div class="index">
-    <div class="banner">
+    <div class="banner scroll-base scroll-hidden">
       <img src="./about-banner.jpg" alt />
     </div>
     <div class="box">
-      <div class="box-item anchor-hook">
+      <div class="box-item anchor-hook scroll-base scroll-hidden">
         <div class="title" id="aboutus">ABOUT US</div>
         <div
           class="content"
-        >Yudezign brand belongs to Yukon company, which was founded in 2007, specializing in customized kitchen, and is a professional service provider of customized kitchen cabinets in the United States. We have the industry's advanced intelligent manufacturing production base, engaged in the overall kitchen cabinets and custom home research and development, design, production, sales of the overall service.</div>
-        <!-- <div class="point-box">
-          <div class="point">
-            <div class="num">900</div>
-            <div class="tip">Total Employees</div>
-          </div>
-          <div class="point">
-            <div class="num">1652</div>
-            <div class="tip">Total Employees</div>
-          </div>
-          <div class="point">
-            <div class="num">900</div>
-            <div class="tip">Total Employees</div>
-          </div>
-        </div>-->
+        >In 2007, Yukon Group was founded with the ideals and values of providing impeccable customer service while supplying beautiful, high-end products for residential as well as commercial projects.  We are proud to announce the establishment of a sister-company: Yudezign.  Identical to Yukon regarding vision and values, Yudezign additionally offers vast and versatile custom cabinetry design options. Our US-based manufacturing site is equipped with the most advanced manufacturing equipment and talented professionals utilizing integrated design-to-completion software, ensuring delivery of consistently high quality products.
+        </div>
       </div>
-      <div class="box-item anchor-hook">
-        <div class="title" id="companyadvantage">COMPANY ADVANTAGE</div>
+      <div class="box-item anchor-hook scroll-base scroll-hidden">
+        <div class="title" id="companyadvantage">COMPANY ADVANTAGES</div>
         <div class="content">
           <div class="content-item">
-            <img src="./icon-about-advantage-1.png" width="124" height="124" alt />
-            <div class="tip">QUALITY ASSURANCE</div>
-            <div class="split-line green"></div>
-            <div class="intro">Our world-class factory management and strict testing standards</div>
+            <img
+              src="./icon-about-advantage-1.png"
+              width="110"
+              height="110"
+              alt
+              class="hover-rotate"
+            />
+            <div class="tip">PROUDLY</div>
+            <div class="tip" style="margin-top:0px;">MADE IN THE US</div>
           </div>
           <div class="content-item">
-            <img src="./icon-about-advantage-2.png" width="124" height="124" alt />
-            <div class="tip">HIGH QUALITY SERVICEHIGH</div>
-            <div class="split-line yellow"></div>
-            <div
-              class="intro"
-            >Our world-class factory management and strict testing standards are the guarantee of quality products.</div>
+            <img
+              src="./icon-about-advantage-2.png"
+              width="110"
+              height="110"
+              class="hover-rotate"
+              alt
+            />
+            <div class="tip">PREMIUM</div>
+            <div class="tip" style="margin-top:0px;">QUALITY</div>
           </div>
           <div class="content-item">
-            <img src="./icon-about-advantage-3.png" width="124" height="124" alt />
-            <div class="tip">EXCELLENT CUSTOMER REVIEW</div>
-            <div class="split-line blue"></div>
-            <div
-              class="intro"
-            >Our world-class factory management and strict testing standards are the guarantee of quality products.</div>
+            <img
+              src="./icon-about-advantage-3.png"
+              width="110"
+              class="hover-rotate"
+              height="110"
+              alt
+            />
+            <div class="tip">UNLIMITED</div>
+            <div class="tip" style="margin-top:0px;">CUSTOMIZATION</div>
+          </div>
+          <div class="content-item">
+            <img
+              src="./icon-about-advantage-4.png"
+              width="110"
+              height="110"
+              class="hover-rotate"
+              alt
+            />
+            <div class="tip">EXTENSIVE</div>
+            <div class="tip" style="margin-top:0px;">DESIGN LIBRARY</div>
+          </div>
+          <div class="content-item">
+            <img
+              src="./icon-about-advantage-5.png"
+              width="110"
+              height="110"
+              alt
+              class="hover-rotate"
+            />
+            <div class="tip">MOISTURE</div>
+            <div class="tip" style="margin-top:0px;">RESISTANT*</div>
+          </div>
+          <div class="content-item">
+            <img
+              src="./icon-about-advantage-6.png"
+              width="110"
+              height="110"
+              class="hover-rotate"
+              alt
+            />
+            <div class="tip">FAST 48 HOUR</div>
+            <div class="tip" style="margin-top:0px;">INITIAL 3D DESIGN TURN-AROUND</div>
+          </div>
+          <div class="content-item">
+            <img
+              src="./icon-about-advantage-7.png"
+              width="110"
+              class="hover-rotate"
+              height="110"
+              alt
+            />
+            <div class="tip">ECO-FRIENDLY</div>
+          </div>
+          <div class="content-item">
+            <img
+              src="./icon-about-advantage-8.png"
+              width="110"
+              height="110"
+              class="hover-rotate"
+              alt
+            />
+            <div class="tip">RELIABLE</div>
+            <div class="tip" style="margin-top:0px;">
+              AND DURABLE
+            </div>
           </div>
         </div>
       </div>
-      <div class="box-item">
+      <!-- 发展历程 -->
+      <!-- <div class="box-item">
         <div class="special">
-          <div class="title">COMPANY ADVANTAGE</div>
+          <div class="title">DEVELOPMENT PLAN</div>
           <div class="special-content">
             <img src="./about-development-pic.png" alt />
           </div>
         </div>
-      </div>
-      <div class="box-item anchor-hook">
+      </div>-->
+      <!-- 公司新闻 -->
+      <!-- <div class="box-item anchor-hook">
         <div class="title" id="companynews">COMPANY NEWS</div>
         <div class="content">
           <div class="swiper-container my-swiper">
@@ -110,17 +166,16 @@
               </div>
             </div>
           </div>
-          <!-- 如果需要导航按钮 -->
           <div class="swiper-button-prev prev">
             <img src="./about-news-left.png" alt />
           </div>
           <div class="swiper-button-next next">
             <img src="./about-news-right.png" alt />
           </div>
-        </div>
-      </div>
+        </div> 
+      </div>-->
     </div>
-    <InnerPageLink :linkData="linkData"></InnerPageLink>
+    <!-- <InnerPageLink :linkData="linkData"></InnerPageLink> -->
   </div>
 </template>
 <script>
@@ -142,14 +197,9 @@ export default {
           idx: 1
         },
         {
-          id: "#companynews",
-          name: "COMPANY NEWS",
-          idx: 2
-        },
-        {
           id: "#message",
           name: "message",
-          idx: 3
+          idx: 2
         }
       ]
     };
@@ -168,8 +218,7 @@ export default {
   mounted: function() {
     this.initSwiper();
   },
-  destroyed: function() {
-  },
+  destroyed: function() {},
   methods: {
     initSwiper: function() {
       var mySwiper = new Swiper(".swiper-container.my-swiper", {
@@ -221,15 +270,16 @@ export default {
         color: rgba(51, 51, 51, 1);
         line-height: 26px;
         position: relative;
+        flex-wrap: wrap;
         .content-item {
-          flex: 1 1 0;
+          width: 25%;
           text-align: center;
           .tip {
             font-size: 16px;
             font-family: Roboto;
             font-weight: 400;
             color: rgba(51, 51, 51, 1);
-            line-height: 28px;
+            line-height: 24px;
             margin-top: 14px;
           }
           .split-line {
@@ -248,10 +298,13 @@ export default {
             font-size: 14px;
             font-family: Roboto;
             font-weight: 100;
-            width: 200px;
+            width: 270px;
             margin: 0 auto;
             color: rgba(153, 153, 153, 1);
             line-height: 21px;
+          }
+          &:nth-child(n + 5) {
+            margin-top: 98px;
           }
         }
       }

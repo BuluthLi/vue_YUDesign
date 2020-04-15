@@ -1,137 +1,181 @@
 <template>
   <div class="index">
-    <div class="banner">
+    <div class="banner scroll-base scroll-hidden">
       <img src="./join-banner1.jpg" alt />
     </div>
     <div class="box">
-      <div class="box-item anchor-hook" style="margin-top:100px">
+      <div class="box-item anchor-hook scroll-base scroll-hidden" style="margin-top:100px">
         <div class="content-box">
-          <div class="left">
+          <div class="left" style="margin-top:30px;">
             <div class="s-title" id="brandintroduction">BRAND</div>
             <div class="s-title">INTRODUCTION</div>
             <div class="split-line"></div>
-            <div class="intro">Speciality because of dedication</div>
+            <!-- <div class="intro" style="font-weight:bold;">Speciality because of dedication</div> -->
             <div
               class="text"
-            >Yudezign brand belongs to universal flooring supply company, which was founded in 2007, specializing in customized kitchen, and is a professional service provider of customized kitchen cabinets in the United States. We have the industry's advanced intelligent manufacturing production base, engaged in the overall kitchen cabinets and custom home research and development, design, production, sales of the overall service.</div>
+              style="width:75%;"
+            >Yudezign is a sister-company of Yukon Group , which was founded in 2007, specializing in customization, and is a professional service provider of customized cabinetry . We utilize leading edge, intelligent technology in the design and manufacture of custom cabinetry offering start-to-finish service.</div>
           </div>
           <div class="right">
             <img src="./join-brand-pic.jpg" alt />
           </div>
         </div>
       </div>
-      <div class="box-item anchor-hook">
-        <div class="title" id="joinprocess">APPLICATION PROCESS</div>
+      <div class="box-item anchor-hook scroll-base scroll-hidden">
+        <div class="title" id="joinprocess">DEALER APPLICATION PROCESS</div>
         <div class="content-box">
-          <img src="./join-process-pic.png" alt class="join-process" />
+          <img
+            src="./join-process-pic.png"
+            alt
+            class="join-process"
+            style="width:896px;margin:0 auto;"
+          />
         </div>
       </div>
-      <div class="special-item anchor-hook">
+      <div class="box-item anchor-hook scroll-base scroll-hidden">
+        <div class="title" id="superiority">STANDARD PROCESS</div>
+        <div class="content" style="width:927px;margin:0 auto;">
+          <img src="./home-Superiority-pic.png" alt />
+        </div>
+      </div>
+      <div class="special-item anchor-hook scroll-base scroll-hidden">
         <div class="title" id="companyadvantage">COMPANY ADVANTAGE</div>
         <div class="content-box">
-          <div class="tip">
-            Yudezign leads kitchen cabinet customization for 12 years, with 3 core competitiveness,
-            strives to improve terminal sales strength
-          </div>
+          <div
+            class="tip"
+            style="text-align:left;"
+          >We serve our clients with the highest quality products and service. Yudezign, partnering with Yukon Group, combines over 12 years experience. We take pride in our attention to detail, the quality of our products and our high level of customer service. As a sales partner, we will be there for you from design through production. Our goal is to make you stand out from others!</div>
           <div class="step-img">
             <img src="./join-advantage-pic.png" alt />
           </div>
           <a class="apply-btn" href="#message">Join partnership</a>
         </div>
       </div>
-      <div class="box-item step-item">
+      <div class="box-item step-item scroll-base scroll-hidden">
         <div class="icon-step">
           <img src="./join-advantage-title1.png" alt />
         </div>
-        <div class="se-title">INTELLIGENT MANUFACTURING HIGHLY EFFICIENT PRODUCTION CAPACITY</div>
-        <div class="text">
-          With the advanced flexible production line leading the industry, the cost and efficiency of mass production, we can produce completely personalized products for every customer.
-          Not only is the daily production capacity 10 times higher than the traditional production, but the material utilization rate is increased from 85% to 93%, so as to ensure the quality and cycle of delivery and guarantee the guarantee of franchisee's terminal sales.
-        </div>
+        <div class="se-title">INTELLIGENT MANUFACTURING</div>
+        <div
+          class="text"
+        >With the industry leading advanced, flexible production line, we can produce completely personalized products for every customer. Not only is the daily production capacity 10 times higher than the traditional production, but the material utilization rate is increased from 85% to 93%, while ensuring product quality and reducing the cycle of delivery. All aspects benefit the dealers' terminal sales.</div>
         <div class="intro-img">
           <img src="./join-advantage-1-pic.jpg" alt />
         </div>
       </div>
-      <div class="box-item step-item">
+      <div class="box-item step-item scroll-base scroll-hidden">
         <div class="icon-step">
           <img src="./join-advantage-title2.png" alt />
         </div>
-        <div class="se-title">STRONG IT SUPPORT TO CREAT A SOFTWARE PLATFORM</div>
-        <div class="text">
-          The YFCAD information system is fully introduced at the sales end, and Yudezign provides franchisees with information technical support from sales to production -- kitchen cabinet design system, cloud rendering, measurement, communication, plan, enabling terminal designers to accurately grasp customer needs, intelligent generation of design plan, improve the quality and efficiency of the drawing, help designers to easily close a large order,
-          help franchisees to reduce sales costs.
-        </div>
+        <div class="se-title">Advanced IT Solutions</div>
+        <div
+          class="text"
+        >The YFCAD information system is fully introduced at the sales end and Yudezign provides dealers with IT support from sales to production – measurement guide, impressive cabinet design system, 3D cloud rendering and manufacture; enabling designers to accurately translate customer needs into the design.</div>
         <div class="intro-img">
-          <img src="./join-advantage-2-pic.png" alt />
+          <img
+            src="./join-advantage-2-pic.png"
+            alt
+            style="width:854px;margin:0 auto;display:block;"
+          />
         </div>
       </div>
-      <div class="box-item step-item">
+      <div class="box-item step-item scroll-base scroll-hidden">
         <div class="icon-step">
           <img src="./join-advantage-title3.png" alt />
         </div>
-        <div class="se-title">MILLIONS OF DESIGN SOLUTIONS IN THE CLOUD</div>
+        <div class="se-title">Design Capabilities</div>
         <div
           class="text"
-        >Relying on the IT strength of YFCAD, the sales end system contains tens of thousands of product and room-scene database. Through cloud computing and big data technology for different people, living in different space behavior and conduct thorough research to the functional requirements, the development of millions of "space overall solution". The design lead time will bo significantly reduced so you can stay focused on your customers.</div>
+        >3D design delivery allows the customer to“experience”their new space – before it happens. The software allows for changes in real time and while in 3D mode. The design lead time will be significantly reduced so you can stay focused on your customers.</div>
         <div class="intro-img">
           <img src="./join-advantage-3-pic.png" alt />
         </div>
       </div>
-      <div class="box-item transition-item">
+      <div class="box-item transition-item scroll-base scroll-hidden">
         <img src="./join-newgen-bg.jpg" alt />
-        <div class="tip">A new generation of lifestyle kitchens</div>
-        <div class="intro">Lead the trend of hutch ark industry, ignite customer to buy desire</div>
+        <div class="tip">Customized Cabinetry</div>
+        <div class="intro">Industry leading cabinetry built to the customer's specifications</div>
         <a class="apply-btn" href="#message">Join partnership</a>
       </div>
-      <div class="box-item anchor-hook" style="margin-top:100px" id="theleaderambryindustry">
+      <div
+        class="box-item anchor-hook scroll-base scroll-hidden"
+        style="margin-top:100px"
+        id="theleaderambryindustry"
+      >
         <div class="content-box">
           <div class="left">
-            <div class="s-title" id="brandintroduction">THE EMGERGING</div>
+            <div class="s-title" id="brandintroduction">THE EMERGING</div>
             <div class="s-title">INDUSTRY LEADER</div>
             <div class="split-line"></div>
-            <div class="intro">multiply customer satisfaction with Game-changer Solution</div>
+            <!-- <div class="intro">multiply customer satisfaction with Game-changer Solution</div> -->
             <div
               class="text"
-            >According to your needs, we can customize the points, lines and surfaces that others are studying in the kitchen function upgrade. We are already studying the lifestyle. Every customer has their own needs, Yudezign according to different life cycle, living habits, occupation, family members, use requirements, budget, etc., to provide customers with personalized design services, innovation proposed "new generation of lifestyle kitchen".</div>
+            >A picture is worth a thousand words. Our 3D software, complete with furniture and accessories gives the customer a virtual view of what their new space will look like. Need some changes? No problem. Change the cabinet color, add an internal upgrade, replace a cupboard with drawers. Every customer has specific needs. Yudezign according to each individual's wants and needs.</div>
           </div>
           <div class="right">
             <img src="./join-leader-pic.jpg" alt />
           </div>
         </div>
       </div>
-      <div class="box-item">
-        <div class="title">EIGHT ADVANTAGES OF NEW LIFTSTYLE KITCHEN</div>
+      <div class="box-item scroll-base scroll-hidden">
+        <div class="title">COMPANY ADVANTAGES</div>
         <div class="content-box">
           <img src="./join-8advantages-pic.png" alt class="join-process" />
         </div>
       </div>
-      <div class="box-item" style="margin-top:100px">
+      <div class="box-item scroll-base scroll-hidden" style="margin-top:100px">
         <div class="content-box">
           <div class="left">
-            <div class="s-title" id="brandintroduction">ONE-TO-ONE</div>
-            <div class="s-title">DESIGN SERVICE</div>
+            <div class="s-title" id="brandintroduction">DEALER DESIGN</div>
+            <div class="s-title">SERVICES</div>
             <div class="split-line"></div>
-            <div class="intro">Differentiated services to maximize satisfaction</div>
+            <div class="intro">YUDEZIGN EXTENDS 3 DEALER LEVEL OPTIONS:</div>
+            <ul style="margin-left: 17px;">
+              <li
+                class="text"
+              >Platinum (Maximm Discount): Must have a full 10*10 foot display in showroom</li>
+              <li
+                class="text"
+                style="margin-top:0px;line-height:28px;"
+              >Gold: Minimum display of 12 inch cabinet with one drawer and one door</li>
+              <li
+                class="text"
+                style="margin-top:0px;line-height:28px;"
+              >Silver: Hand sample drawer to demonstrate quality as well as door finish samples</li>
+            </ul>
+            <div class="text-div">All Dealers will receive:</div>
+            <div class="text-div">Door finish samples</div>
+            <div class="text-div">Measuring guide</div>
+            <div class="text-div">Design software with training provided</div>
+            <div class="text-div">Catalogs (quantity to be determined)</div>
+            <div class="text-div">Brochures (quantity to be determined)</div>
             <div
               class="text"
-            >Yudezign designers provide one-on-one design services to every customer. Free measurement, free design of 3D renderings, dedicated to the personalized design for every family, just for the exclusive ideal "home"!</div>
+            >Contact Yudezign to determine what dealer level will work best for you.</div>
           </div>
           <div class="right">
-            <img src="./join-121-pic.jpg" alt />
+            <img src="./join-121-pic.jpg" class="necktie" alt />
           </div>
         </div>
       </div>
-      <div class="box-item">
+      <div class="box-item scroll-base scroll-hidden">
         <div class="title">
           <div>JOIN THE NEW INDUSTRY</div>
-          <div style="font-size: 14px;color: rgba(51, 51, 51, 1);margin-top:20px;">Join Yudezign to initiate kitchen cabinet customization business</div>
+          <div
+            style="font-size: 14px;color: rgba(51, 51, 51, 1);margin-top:20px;"
+          >Join Yudezign to initiate cabinetry customization business</div>
         </div>
         <div class="content-box">
-          <img src="./join-object-pic.jpg" alt class="join-process" />
+          <img
+            src="./join-object-pic.jpg"
+            alt
+            class="join-process"
+            style="width:827px;margin:0 auto;"
+          />
         </div>
       </div>
     </div>
-    <InnerPageLink :linkData="linkData"></InnerPageLink>
+    <!-- <InnerPageLink :linkData="linkData"></InnerPageLink> -->
   </div>
 </template>
 <script>
@@ -170,8 +214,7 @@ export default {
   },
   computed: {},
   mounted: function() {},
-  destroyed: function() {
-  },
+  destroyed: function() {},
   methods: {},
   components: {
     InnerPageLink
@@ -236,6 +279,7 @@ export default {
             color: #333333;
             line-height: 24px;
             margin-top: 20px;
+            text-align: left;
           }
         }
         .right {
@@ -244,7 +288,11 @@ export default {
           height: 307px;
           img {
             width: 417px;
-            height: 307px;
+            height: 310px;
+          }
+          .necktie {
+            width: 417px;
+            height: 446px;
           }
         }
         .join-process {
@@ -274,13 +322,14 @@ export default {
         margin: 0 auto;
         text-align: center;
         .tip {
-          width: 754px;
+          width: 960px;
           font-size: 18px;
           font-family: Roboto;
           font-weight: 100;
           margin: 0 auto;
           color: rgba(255, 255, 255, 1);
           line-height: 32px;
+          text-align: left;
         }
         .step-img {
           width: 780px;
@@ -291,10 +340,10 @@ export default {
           display: block;
           width: 350px;
           height: 68px;
-          margin: 96px auto 0 auto;
+          margin: 60px auto 0 auto;
           text-align: center;
           line-height: 64px;
-          background: rgba(209, 177, 126, 1);
+          background: #32b67a;
           font-size: 24px;
           font-family: Roboto;
           font-weight: 500;
@@ -326,7 +375,7 @@ export default {
         font-weight: 100;
         color: rgba(102, 102, 102, 1);
         line-height: 21px;
-        text-align: center;
+        text-align: left;
         margin: 40px auto;
       }
     }
@@ -359,6 +408,7 @@ export default {
         font-weight: 100;
         color: rgba(255, 255, 255, 1);
         line-height: 32px;
+        text-align: left;
       }
       .apply-btn {
         position: absolute;
@@ -370,7 +420,7 @@ export default {
         height: 68px;
         text-align: center;
         line-height: 64px;
-        background: rgba(209, 177, 126, 1);
+        background: #32b67a;
         font-size: 24px;
         font-family: Roboto;
         font-weight: 500;
@@ -378,6 +428,15 @@ export default {
         cursor: pointer;
       }
     }
+  }
+
+  .text-div {
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 100;
+    color: #333333;
+    line-height: 24px;
+    text-align: left;
   }
 }
 </style>

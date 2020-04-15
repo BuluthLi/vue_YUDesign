@@ -1,5 +1,5 @@
 <template>
-  <div class="anchor">
+  <div class="anchor" :style="{bottom:bottom}">
     <a href="#header">
       <div class="top-block">
         <img src="./icon-right-top.png" alt />
@@ -7,15 +7,28 @@
       </div>
     </a>
     <a href="#footer">
-      <div class="footer-block">
+      <div class="footer-block" style="font-size:12px;">
         <img src="./icon-right-apply.png" alt />
-        <div class="text">Apply</div>
+        <div class="text">CONTACT US</div>
       </div>
     </a>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    bottom: function() {
+      if (this.$route.path == "/home") {
+        return "300px";
+      } else {
+        return "120px";
+      }
+    }
+  }
+};
 </script>
 <style lang="less" scoped>
 .anchor {
@@ -33,15 +46,17 @@ export default {};
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    margin-top:4px;
+    margin-top: 4px;
+    text-align: center;
+    line-height: 1.2;
     img {
       display: block;
       width: 100%;
       padding: 0 26px;
     }
-    .text{
-        margin-top:10px;
-        color:white;
+    .text {
+      margin-top: 10px;
+      color: white;
     }
   }
 }
