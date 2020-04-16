@@ -38,9 +38,10 @@ module.exports = {
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
-    cacheBusting: true,
+    //破坏缓存
+    cacheBusting: false,
 
-    cssSourceMap: true
+    cssSourceMap: false
   },
 
   build: {

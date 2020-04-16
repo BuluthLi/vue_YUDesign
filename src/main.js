@@ -9,6 +9,13 @@ import store from "./store/index"
 import 'swiper/dist/css/swiper.css';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import VueProgressiveImage from 'vue-progressive-image'// 渐进式
+Vue.use(VueProgressiveImage, {
+  delay: 500,
+  cache: true,
+  blur:0
+});
+console.log(VueProgressiveImage);
 
 // import './assets/css/animate.css';
 
