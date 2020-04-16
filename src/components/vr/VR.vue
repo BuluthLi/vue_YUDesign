@@ -4,7 +4,7 @@
     <div class="swiper-container vr-swiper">
       <div class="left">
         <img :src="vrData[currentActive].detailList[detailActive].imgList[imgActive].src" alt />
-        <div class="img-list">
+        <div class="img-list progressive">
           <div
             class="img-item"
             :class="imgActive==innerIndexL?'img-item-active':''"
@@ -13,6 +13,7 @@
             @click="onChangeImg(innerIndexL)"
           >
             <progressive-background :src="innerItemL.src" :placeholder="initImg" :blur="0" />
+            <!-- <img class="preview" v-progressive="innerItemL.src" :style="{zIndex:99+innerIndexL}" :src="initImg" /> -->
           </div>
         </div>
       </div>
@@ -39,7 +40,7 @@
         <div class="item-name item-name-description">Description</div>
         <div
           class="text"
-        >Mr. Zhang, with a family of five, has many requirements for thekitchen. He likes the dark wood color on the door, dark grey color on the countertop. In addition to the most basic require-ments of a reasonable layout, color matching, he hopes that the kitchen can have more storage functions. he hopes that the kitchen can have more storage functions.</div>
+        >Mr. Zhang, with a family of five, has many requirements for thekitchen. He likes the dark wood color on the door, dark grey color on the countertop. In addition to the most basic require-ments of a reasonable layout, color matching.</div>
         <!-- 暂时隐藏vr按钮 -->
         <!-- <div class="btn" @click.stop="onOpenVR(item.vrUrl)">→ VR PANORAMA</div> -->
       </div>
@@ -626,6 +627,15 @@ export default {
           &.img-item-active {
             border: 2px solid #32b67a;
           }
+          // position: relative;
+          // img {
+          //   width: auto;
+          //   height: 100%;
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   z-index: 1;
+          // }
         }
       }
     }
@@ -640,7 +650,7 @@ export default {
       background-position: 0rem 10%;
       background-repeat: no-repeat;
       .title {
-        margin-top: 1.18rem;
+        margin-top: 0.6rem;
         font-size: 0.28rem;
         font-family: Roboto;
         font-weight: bold;
@@ -705,7 +715,7 @@ export default {
         }
       }
       .item-name-description {
-        margin-top: 0.6rem;
+        margin-top: 0.3rem;
         @media screen and (max-width: 1400px) {
           margin-top: 0.2rem;
         }
