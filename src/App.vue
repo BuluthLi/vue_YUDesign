@@ -27,6 +27,9 @@ export default {
       });
     }
   },
+  methods: {
+
+  },
   components: {
     Footer,
     Header,

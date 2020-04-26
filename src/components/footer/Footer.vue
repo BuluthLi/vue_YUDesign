@@ -178,7 +178,8 @@ export default {
   mounted: function() {
     window.addEventListener("resize", this.onResizeChagne);
     this.initAddressSwiper();
-    this.initMap();
+    setTimeout(this.initMap, 2000);
+    // this.initMap();
   },
   methods: {
     // 此处使用在axios人为扩展的jsonp方式，进行数据请求
@@ -227,7 +228,7 @@ export default {
       let _this = this;
       try {
         _this.map = new google.maps.Map(document.getElementById("map"), {
-          center: new google.maps.LatLng(55.378051, -3.435973),
+          center: new google.maps.LatLng(29.6303338, -95.5675904),
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           zoom: 10,
           gestureHandling: "greedy"

@@ -3,17 +3,21 @@
     <div class="banner scroll-base scroll-hidden">
       <div class="left">
         <img src="./prolist-list-titlebg.png" alt />
-        <div
-          class="text"
-        >We understand that people want unique decor for their homes and the best quality at affordable prices. No matter what our customers envision, we have a solution for every renovation project. We intentionally carry a very diverse selection to make sure that even the most complicated customizations feel effortless.</div>
+        <div class="spectial-title">{{vrCoverData[mySwiperActive].title}}</div>
+        <div class="text">{{vrCoverData[mySwiperActive].text}}</div>
         <!-- 如果需要导航按钮 -->
         <div class="swiper-button-prev prev"></div>
         <div class="swiper-button-next next"></div>
       </div>
       <div class="swiper-container my-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item,index) in vrCoverData" :key="index">
-            <div class="img-box" @click.stop="onShowVR(index)">
+          <div
+            class="swiper-slide"
+            v-for="(item,index) in vrCoverData"
+            :key="index"
+            :data-i="index"
+          >
+            <div class="img-box click-img-box" :data-i="index">
               <div class="cover-box">
                 <img :src="item.src" alt class="cover hover-scale" />
               </div>
@@ -93,9 +97,24 @@
         <div class="kitchen-box">
           <div class="kitchen-img-box">
             <div class="bg"></div>
-            <img src="./mainone.jpg" alt class="mainone" @click="onPreImg('./mainone.jpg')" />
-            <img src="./maintwo.jpg" alt class="maintwo" @click="onPreImg('./maintwo.jpg')" />
-            <img src="./mainthree.jpg" alt class="mainthree" @click="onPreImg('./mainthree.jpg')" />
+            <img
+              src="./mainoneL_test.jpg"
+              alt
+              class="mainone"
+              @click="onPreImg('./mainoneL_test.jpg')"
+            />
+            <img
+              src="./maintwoL_test.jpg"
+              alt
+              class="maintwo"
+              @click="onPreImg('./maintwoL_test.jpg')"
+            />
+            <img
+              src="./mainthreeL_test.jpg"
+              alt
+              class="mainthree"
+              @click="onPreImg('./mainthreeL_test.jpg')"
+            />
           </div>
           <div class="kitchen-text-box">
             <div class="key">Door Finish</div>
@@ -121,9 +140,24 @@
           </div>
           <div class="kitchen-img-box">
             <div class="bg"></div>
-            <img src="./mainone.jpg" alt class="mainone" @click="onPreImg('./mainone.jpg')" />
-            <img src="./maintwo.jpg" alt class="maintwo" @click="onPreImg('./maintwo.jpg')" />
-            <img src="./mainthree.jpg" alt class="mainthree" @click="onPreImg('./mainthree.jpg')" />
+            <img
+              src="./mainoneU_test.jpg"
+              alt
+              class="mainone"
+              @click="onPreImg('./mainoneU_test.jpg')"
+            />
+            <img
+              src="./maintwoU_test.jpg"
+              alt
+              class="maintwo"
+              @click="onPreImg('./maintwoU_test.jpg')"
+            />
+            <img
+              src="./mainthreeU_test.jpg"
+              alt
+              class="mainthree"
+              @click="onPreImg('./mainthreeU_test.jpg')"
+            />
           </div>
         </div>
       </div>
@@ -135,9 +169,24 @@
         <div class="kitchen-box">
           <div class="kitchen-img-box">
             <div class="bg"></div>
-            <img src="./mainone.jpg" alt class="mainone" @click="onPreImg('./mainone.jpg')" />
-            <img src="./maintwo.jpg" alt class="maintwo" @click="onPreImg('./maintwo.jpg')" />
-            <img src="./mainthree.jpg" alt class="mainthree" @click="onPreImg('./mainthree.jpg')" />
+            <img
+              src="./mainoneI_test.jpg"
+              alt
+              class="mainone"
+              @click="onPreImg('./mainoneI_test.jpg')"
+            />
+            <img
+              src="./maintwoI_test.jpg"
+              alt
+              class="maintwo"
+              @click="onPreImg('./maintwoI_test.jpg')"
+            />
+            <img
+              src="./mainthreeI_test.jpg"
+              alt
+              class="mainthree"
+              @click="onPreImg('./mainthreeI_test.jpg')"
+            />
           </div>
           <div class="kitchen-text-box">
             <div class="key">Door Finish</div>
@@ -247,9 +296,9 @@
       </div>
       <div class="box-item anchor-hook scroll-base scroll-hidden" id="industyleadingquality">
         <div class="title">Industry-Leading Quality</div>
-        <div class="intro">The 12 Technologies For Cabinets</div>
+        <div class="intro">The 11 Technologies For Cabinets</div>
         <div class="intro-img">
-          <img src="./prolist-12tedian-pic.png" alt class="scroll-base" />
+          <img src="./prolist-12tedian-pic-test.png" alt class="scroll-base" />
         </div>
       </div>
     </div>
@@ -258,9 +307,12 @@
       <div class="img-box" :style="{backgroundImage:'url('+currentUrl+')'}" @click="onCLosePreImg"></div>
     </div>
     <!-- <InnerPageLink :linkData="linkData"></InnerPageLink> -->
-    <div v-if="showVR">
-      <VR :active="active" v-on:onCloseVR="onCloseVR"></VR>
-    </div>
+    <VR
+      :active="active"
+      v-on:onCloseVR="onCloseVR"
+      v-on:onChangeActive="onChangeActive"
+      v-show="showVR"
+    ></VR>
   </div>
 </template>
 <script>
@@ -303,56 +355,57 @@ export default {
       vrCoverData: [
         {
           src: pro1,
-          text:
-            "In marble numerous kinds, crystal marble appears all the more different, its quality of a material is hard, decorative pattern is exquisite, colour and lustre is even, resist corrode to wait a moment again, be applied in domestic decorating extensively by people.",
           vrUrl: "http://bimosscdn.yfway.com/project/pano/32762724/index.html",
           id: 100, //id区分不同图片作用
-          title: "GEMSTONE"
+          title: "GEMSTONE",
+          text:
+            "Polished. Sophisticated. Sleek.  The Gemstone collection of finishes gives a high gloss finish to your cabinetry. Perfect for those who seek a modern, uncluttered, minimalist vibe for their home or office. The stark colors of the cabinets allow for dramatic splashes of color for those rare pieces of art you want noticed."
         },
         {
           src: pro2,
-          text:
-            "In marble numerous kinds, crystal marble appears all the more different, its quality of a material is hard, decorative pattern is exquisite, colour and lustre is even, resist corrode to wait a moment again, be applied in domestic decorating extensively by people.",
           vrUrl: "http://bimosscdn.yfway.com/project/pano/32762724/index.html",
           title: "HERITAGE",
-          id: 200
+          id: 200,
+          text:
+            "Bring the feel of Colonial Williamsburg into your home with this color collection. Heritage colors are classics that never go out of style. This palette also works well for a coastal feel: light and airy, you can almost smell the sea salt in the air."
         },
         {
           src: pro3,
-          text:
-            "In marble numerous kinds, crystal marble appears all the more different, its quality of a material is hard, decorative pattern is exquisite, colour and lustre is even, resist corrode to wait a moment again, be applied in domestic decorating extensively by people.",
           vrUrl: "http://bimosscdn.yfway.com/project/pano/32762724/index.html",
           id: 300,
-          title: "ALASKA"
+          title: "ALASKA",
+          text:
+            "White. This timeless color can be used for almost all styles. It creates a blank palette that works well with any metal hardware.  In a kitchen, whether you want a classic, traditional style or a severe, contemporary look – you can’t go wrong with white.  Used in a bath or any other room, you can soften it with pastels or neutrals or add shock value with jewel and neon colors."
         },
         {
           src: pro4,
-          text:
-            "In marble numerous kinds, crystal marble appears all the more different, its quality of a material is hard, decorative pattern is exquisite, colour and lustre is even, resist corrode to wait a moment again, be applied in domestic decorating extensively by people.",
           vrUrl: "http://bimosscdn.yfway.com/project/pano/32762724/index.html",
           id: 400,
-          title: "EXOTIC"
+          title: "EXOTIC",
+          text:
+            "The deep, rich tones of the Exotic collection make a bold statement. Mix the vertical and horizontal pattern of the finish to add depth and interest to your room.  This collection works well with either cool or warm tones, bringing a totally different feel to the room. Lend a sense of adventure to your home or office with the Exotic Collection."
         },
         {
           src: pro5,
-          text:
-            "In marble numerous kinds, crystal marble appears all the more different, its quality of a material is hard, decorative pattern is exquisite, colour and lustre is even, resist corrode to wait a moment again, be applied in domestic decorating extensively by people.",
           vrUrl: "http://bimosscdn.yfway.com/project/pano/32762724/index.html",
           id: 500,
-          title: "FARMHOUSE"
+          title: "FARMHOUSE",
+          text:
+            "People have gone crazy over the farmhouse look!  Perhaps it is the desire to bring the feel of open land and sunshine into our homes while living in the hustle and bustle of city life.  The Farmhouse Collection offers a textured, weathered wood finish to your cabinetry.  Mix classic, contemporary, transitional styles with farmhouse cabinetry to give your home a casual feel.  Dress this style up or down to create a feel that makes you happy."
         },
         {
           src: pro6,
-          text:
-            "In marble numerous kinds, crystal marble appears all the more different, its quality of a material is hard, decorative pattern is exquisite, colour and lustre is even, resist corrode to wait a moment again, be applied in domestic decorating extensively by people.",
           vrUrl: "http://bimosscdn.yfway.com/project/pano/32762724/index.html",
           id: 600,
-          title: "Uptown"
+          title: "UPTOWN",
+          text:
+            "Linen.  A beautiful, natural fabric – that wrinkles like crazy.  Uptown gives you the opportunity to bring a linen look into your home; without the wrinkles.  Pair this interesting pattern with rich colored walls and – dare I say it? - crisp linen draperies, for a dramatic yet airy effect.  Understated, yet elegant and quite unique."
         }
       ],
 
       showVR: false,
       mySwiper: null,
+      mySwiperActive: 0,
       normalSwiper: null,
       active: 0,
       detailActive: 0,
@@ -370,9 +423,10 @@ export default {
   },
   methods: {
     initSwiper: function() {
-      this.mySwiper = new Swiper(".swiper-container.my-swiper", {
+      let _this = this;
+      _this.mySwiper = new Swiper(".swiper-container.my-swiper", {
         //   小数2.5不可以loop,循环的又slide点击事件不生效（插件自动复制的slide上的事件不生效）
-        // loop: true,
+        loop: true,
         // autoplay: {
         //   disableOnInteraction: false,
         //   delay: 1000
@@ -386,14 +440,24 @@ export default {
         pagination: {
           el: ".swiper-pagination",
           clickable: true
+        },
+        on: {
+          slideChangeTransitionEnd: function() {
+            let count = (this.activeIndex % _this.vrCoverData.length) - 2;
+            if (count < 0) {
+              count = count + _this.vrCoverData.length;
+            }
+            _this.mySwiperActive = count;
+          }
         }
       });
-      // let target = document.getElementsByClassName("detail-img");
-      // for (let i = 0; i < target.length; i++) {
-      //   target[i].addEventListener("click", () => {
-      //     this.onShowVR();
-      //   });
-      // }
+      let target = document.getElementsByClassName("click-img-box");
+      for (let i = 0; i < target.length; i++) {
+        let active = parseInt(target[i].getAttribute("data-i"), 10);
+        target[i].addEventListener("click", () => {
+          this.onShowVR(active);
+        });
+      }
     },
     initNormalSwiper: function() {
       this.normalSwiper = new Swiper(".swiper-container.normal-swiper", {
@@ -437,6 +501,9 @@ export default {
     onCloseVR: function() {
       this.showVR = false;
     },
+    onChangeActive: function(val) {
+      this.active = val;
+    },
     onPreImg(src) {
       let url = require("" + src);
       this.showPreImg = true;
@@ -464,16 +531,23 @@ export default {
     .left {
       width: 580px;
       position: relative;
+      .spectial-title {
+        font-size: 42px;
+        font-family: Roboto;
+        font-weight: bold;
+        color: rgba(51, 51, 51, 1);
+        margin: -46px 0 0 170px;
+      }
       img {
         width: 221%;
         height: auto;
       }
       .text {
-        margin: 60px 0 0 170px;
+        margin: 40px 0 0 170px;
         width: 310px;
         height: 134px;
         font-size: 14px;
-        font-family: Roboto;
+        font-family: "Arial";
         font-weight: 100;
         color: rgba(51, 51, 51, 1);
         line-height: 24px;
@@ -485,7 +559,7 @@ export default {
         background-size: 53px 53px;
         background-image: url(./prolist-list-l.png);
         left: 189px;
-        top: 500px;
+        top: 520px;
       }
 
       .swiper-button-next {
@@ -495,7 +569,7 @@ export default {
         background-size: 53px 53px;
         background-image: url(./prolist-list-r.png);
         left: 288px;
-        top: 500px;
+        top: 520px;
       }
     }
     .my-swiper {
@@ -687,26 +761,26 @@ export default {
             right: 0;
           }
           .maintwo {
-            width: 27%;
+            width: 24%;
             height: auto;
             position: absolute;
             z-index: 6;
-            bottom: 0px;
+            bottom: -70px;
             @media screen and (max-width: 1400px) {
-              bottom: 76px;
+              bottom: 40px;
             }
-            right: 44%;
+            right: 42%;
           }
           .mainthree {
-            width: 27%;
+            width: 24%;
             height: auto;
             position: absolute;
             z-index: 6;
-            bottom: 0px;
+            bottom: -70px;
             @media screen and (max-width: 1400px) {
-              bottom: 76px;
+              bottom: 40px;
             }
-            right: 4%;
+            right: 12%;
           }
         }
       }
@@ -775,26 +849,26 @@ export default {
             left: 0;
           }
           .maintwo {
-            width: 27%;
+            width: 24%;
             height: auto;
             position: absolute;
             z-index: 6;
-            bottom: 0px;
+            bottom: -70px;
             @media screen and (max-width: 1400px) {
-              bottom: 76px;
+              bottom: 40px;
             }
-            left: 4%;
+            left: 12%;
           }
           .mainthree {
-            width: 27%;
+            width: 24%;
             height: auto;
             position: absolute;
             z-index: 6;
-            bottom: 0px;
+            bottom: -70px;
             @media screen and (max-width: 1400px) {
-              bottom: 76px;
+              bottom: 40px;
             }
-            left: 44%;
+            left: 42%;
           }
         }
       }
@@ -905,7 +979,7 @@ export default {
       background-size: 53px 53px;
       background-image: url(./prolist-list-l.png);
       left: 35%;
-      top: 82%;
+      top: 88%;
     }
 
     .swiper-button-next {
@@ -915,7 +989,7 @@ export default {
       background-size: 53px 53px;
       background-image: url(./prolist-list-r.png);
       left: 50%;
-      top: 82%;
+      top: 88%;
     }
   }
 }

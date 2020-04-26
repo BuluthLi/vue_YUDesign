@@ -10,7 +10,7 @@ var webpack = require("webpack");
 module.exports = {
     // mode: "development || "production",
     entry: {
-        publicjs: ['iview','axios']
+        publicjs: ['iview', 'axios']
     },
     output: {
         path: path.join(__dirname, "../dll"),
@@ -20,7 +20,7 @@ module.exports = {
     plugins: [
         new webpack.DllPlugin({
             path: path.join(__dirname, "../dll", "[name]-manifest.json"),
-            name: "[name]",
+            name: "[name]", context: __dirname
         }),
         new webpack.optimize.UglifyJsPlugin({})
     ]

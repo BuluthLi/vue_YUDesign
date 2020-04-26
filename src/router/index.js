@@ -46,10 +46,45 @@ export default new Router({
         keepAlive: true
       }
     },
+
     // 重定向
+    // {
+    //   path: '*',
+    //   redirect: '/home'
+    // }
+
     {
-      path: '*',
-      redirect: '/home'
-    }
+      path: '/home-test',
+      name: 'Home-test',
+      component: () => import(/*webpackChunkName:'home' */'../components/home/Home-test.vue'),
+      // 是否销毁页面（内存）
+      meta: {
+        keepAlive: true
+      }
+    },
+    {
+      path: '/product-test',
+      name: 'Product-test',
+      component: () => import(/*webpackChunkName:'home' */'../components/product/Product-test.vue'),
+      meta: {
+        keepAlive: true
+      }
+    },
+    {
+      path: '/about-test',
+      name: 'About-test',
+      component: () => import(/*webpackChunkName:'main' */'../components/about/About-test.vue'),
+      meta: {
+        keepAlive: true
+      }
+    },
+    {
+      path: '/join-test',
+      name: 'Join-test',
+      component: () => import(/*webpackChunkName:'main' */'../components/join/Join-test.vue'),
+      meta: {
+        keepAlive: true
+      }
+    },
   ]
 })

@@ -86,6 +86,65 @@ export default {
     setTimeout(() => {
       this.initScroll();
     }, 300);
+    let op = this.parseUrl();
+    console.log(op);
+    if (op.test && op.test == 1) {
+      this.onChagePage("/home-test", 0);
+      this.navList = [
+        {
+          id: 0,
+          name: "HOME",
+          path: "/home-test",
+          hrefName: "home-test"
+        },
+        {
+          id: 1,
+          name: "COLLECTIONS",
+          path: "/product-test",
+          hrefName: "product-test"
+        },
+        {
+          id: 2,
+          name: "ABOUT US",
+          path: "/about-test",
+          hrefName: "about-test"
+        },
+        {
+          id: 3,
+          name: "JOIN US",
+          path: "/join-test",
+          hrefName: "join-test"
+        }
+      ];
+    } else {
+      this.onChagePage("/home", 0);
+      this.navList = [
+        {
+          id: 0,
+          name: "HOME",
+          path: "/home",
+          hrefName: "home"
+        },
+        {
+          id: 1,
+          name: "COLLECTIONS",
+          path: "/product",
+          hrefName: "product"
+        },
+        {
+          id: 2,
+          name: "ABOUT US",
+          path: "/about",
+          hrefName: "about"
+        },
+        {
+          id: 3,
+          name: "JOIN US",
+          path: "/join",
+          hrefName: "join"
+        }
+      ];
+    }
   },
   methods: {
     onChagePage: function(path, id) {
@@ -113,6 +172,16 @@ export default {
         }
       }
     },
+    parseUrl() {
+      var searchHref = window.location.search.replace("?", "");
+      var params = searchHref.split("&");
+      var returnParam = {};
+      params.forEach(function(param) {
+        var paramSplit = param.split("=");
+        returnParam[paramSplit[0]] = paramSplit[1];
+      });
+      return returnParam;
+    }
   }
 };
 </script>
