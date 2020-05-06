@@ -180,6 +180,17 @@ export default {
     this.initAddressSwiper();
     setTimeout(this.initMap, 2000);
     // this.initMap();
+
+    // let clientHeight = document.documentElement.clientHeight;
+    // let footer = document.querySelector("#footer");
+    // let position = footer.getBoundingClientRect();
+
+    // 视口位置domElement.getBoundingClientRect();滚动位置 domElement.scrollTop,window.pageYOffset
+
+    //具体事例，有正确的，也有错误的undefined
+    // console.log(footer.scrollTop,footer.pageYOffset);
+    // console.log(window.scrollTop,window.pageYOffset);
+    // console.log(document.documentElement.scrollTop,window.pageYOffset);
   },
   methods: {
     // 此处使用在axios人为扩展的jsonp方式，进行数据请求

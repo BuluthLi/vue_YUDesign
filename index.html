@@ -32,13 +32,28 @@
     target.style.fontSize = target.clientWidth / 1920 * 100 + 'px';
 
 
+    /**
+     * DOM元素位置相关记录
+    */
+    // let clientHeight = document.documentElement.clientHeight;
+    // let footer = document.querySelector("#footer");
+    // let position = footer.getBoundingClientRect();
+
+      // 视口位置domElement.getBoundingClientRect();滚动位置 domElement.scrollTop,window.pageYOffset
+
+      //具体事例，有正确的，也有错误的undefined
+      // console.log(footer.scrollTop,footer.pageYOffset);
+      // console.log(window.scrollTop,window.pageYOffset);
+      // console.log(document.documentElement.scrollTop,window.pageYOffset);
+
   </script>
 </head>
 
 <body>
   <div id="app"></div>
   <!-- built files will be auto injected -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ozzDLpblYqEVGUhL5BUmNgXYOMaprJU&language=en&callback=initMap"
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0ozzDLpblYqEVGUhL5BUmNgXYOMaprJU&language=en&callback=initMap"
     async defer></script>
 </body>
 
