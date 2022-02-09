@@ -1,3 +1,6 @@
+
+vue的通信，路由，状态管理较为全面的和软件端配合
+
 # yudezign
 
 > A Vue.js project
